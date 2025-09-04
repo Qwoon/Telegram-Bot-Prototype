@@ -55,27 +55,7 @@ public sealed class BotUpdateHandler : IBotUpdateHandler
 
         if (_userStateManager.GetUserSate(message.From.Id).UserState == Enums.UserState.WaitingForReply)
         {
-            // TODO: #1 Save the reply
-
-            // TODO: #2 Send follow-up to user
-
-            await _client.SendMessage(
-                chatId: message.Chat.Id,
-                text: "Your question has been successfully delivered to the admins.");
-
-            // TODO: #3 Format & Send the message to a group chat
-
-            var groupMessage = $"""
-                From: @{message.From.Username}
-                Date: {Core.TimeProvider.ConvertToRigaTime(DateTime.UtcNow)}
-                Message: {message.Text}
-                """;
-
-            await _client.SendMessage(
-                chatId: _options.AdminGroupChatId,
-                text: groupMessage);
-
-            _userStateManager.RemoveUserState(message.From.Id);
+            // TODO: Empty in here..
         }
         else
         {

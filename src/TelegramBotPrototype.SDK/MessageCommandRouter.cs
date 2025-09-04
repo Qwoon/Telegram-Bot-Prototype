@@ -14,7 +14,7 @@ public sealed class MessageCommandRouter
 
     public MessageCommandRouter(UserStateManager userStateManager)
     {
-        userStateManager = _userStateManager;
+        _userStateManager = userStateManager;
     }
 
     public void RegisterCommand(BaseCommand command)
