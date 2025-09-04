@@ -2,6 +2,6 @@ namespace TelegramBotPrototype.SDK.Enums;
 
 public enum UserState : byte
 {
-    Default,
-    WaitingForReply
+    Default = 0,
+    WaitingForReply = 1
 }

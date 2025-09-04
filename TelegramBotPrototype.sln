@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.Data",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.EFCore.Design", "src\TelegramBotPrototype.EFCore.Design\TelegramBotPrototype.EFCore.Design.csproj", "{9C629E9E-A5CC-CE8E-D849-4D8D60B977EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.SDK.Tests", "src\Tests\TelegramBotPrototype.SDK.Tests\TelegramBotPrototype.SDK.Tests.csproj", "{D81E674F-621C-4767-9122-FA36F8D7C661}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,9 +55,16 @@ Global
 		{9C629E9E-A5CC-CE8E-D849-4D8D60B977EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C629E9E-A5CC-CE8E-D849-4D8D60B977EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C629E9E-A5CC-CE8E-D849-4D8D60B977EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81E674F-621C-4767-9122-FA36F8D7C661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81E674F-621C-4767-9122-FA36F8D7C661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81E674F-621C-4767-9122-FA36F8D7C661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81E674F-621C-4767-9122-FA36F8D7C661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D81E674F-621C-4767-9122-FA36F8D7C661} = {C3DA3C2E-B13F-40F8-B0B6-C8AEF206AEE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8358BE4C-442B-488C-BC93-27FCBA82BD27}

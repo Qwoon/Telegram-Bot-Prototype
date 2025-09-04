@@ -15,6 +15,6 @@ public class StoryCommand(UserStateManager userStateManager) : BaseCommand
     {
         await SendMessageAsync(client, message, "Please, tell me a story, so I can forward it to the administrators.");
 
-        _userStateManager.SetUserState(message.From.Id, Enums.UserState.WaitingForReply);
+        _userStateManager.SetUserState(message.From.Id, new UserCommandState { Command = this, UserState = Enums.UserState.WaitingForReply });
     }
 }

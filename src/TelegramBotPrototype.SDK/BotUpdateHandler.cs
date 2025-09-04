@@ -53,7 +53,7 @@ public sealed class BotUpdateHandler : IBotUpdateHandler
     {
         _logger.LogInformation("Received message from chat #{chatId}. User {user}", message.Chat.Id, message.From.Username);
 
-        if (_userStateManager.GetUserSate(message.From.Id) == Enums.UserState.WaitingForReply)
+        if (_userStateManager.GetUserSate(message.From.Id).UserState == Enums.UserState.WaitingForReply)
         {
             // TODO: #1 Save the reply
 
