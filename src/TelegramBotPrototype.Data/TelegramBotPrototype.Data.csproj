@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Internal Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\TelegramBotPrototype.Core\TelegramBotPrototype.Core.csproj" />
+    <ProjectReference Include="..\TelegramBotPrototype.EFCore.Design\TelegramBotPrototype.EFCore.Design.csproj" />
+  </ItemGroup>
+
+  <!-- External Dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.8" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+  </ItemGroup>
+
+  <!-- SQL Migrations -->
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.up.sql">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+      <DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.up', '.cs'))</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="**\*.down.sql">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+      <DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.down', '.cs'))</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
