@@ -54,3 +54,4 @@ services:
       - ./https:/https:ro
       - ./src/TelegramBotPrototype/appsettings.json:/srv/appsettings.json:ro
       - ./src/TelegramBotPrototype/appsettings.Development.json:/srv/appsettings.Development.json:ro
+      - ./src/TelegramBotPrototype/appsettings.Production.json:/srv/appsettings.Development.json:ro

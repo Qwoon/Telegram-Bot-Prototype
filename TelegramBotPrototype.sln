@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.EFCore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.SDK.Tests", "src\Tests\TelegramBotPrototype.SDK.Tests\TelegramBotPrototype.SDK.Tests.csproj", "{D81E674F-621C-4767-9122-FA36F8D7C661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.Common", "TelegramBotPrototype.Common\TelegramBotPrototype.Common.csproj", "{85E32C04-5E50-417C-858A-7135A801D145}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBotPrototype.Common", "src\Tests\TelegramBotPrototype.Common\TelegramBotPrototype.Common.csproj", "{85E32C04-5E50-417C-858A-7135A801D145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
