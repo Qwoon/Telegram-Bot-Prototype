@@ -4,7 +4,7 @@ using TelegramBotPrototype.SDK.Enums;
 
 namespace TelegramBotPrototype.SDK;
 
-public struct UserCommandState
+public class UserCommandState
 {
     public required BaseCommand Command { get; set; }
     public required UserState UserState { get; set; }
