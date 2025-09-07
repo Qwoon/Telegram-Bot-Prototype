@@ -6,16 +6,16 @@ using TelegramBotPrototype.SDK.Options;
 namespace TelegramBotPrototype.SDK.Commands;
 
 public class StoryCommandFollowUp(
+    UserStateManager userStateManager,
     BotOptions options) : ICommandFollowUp
 {
+    private readonly UserStateManager _userStateManager = userStateManager;
     private readonly BotOptions _options = options;
 
     public Type FollowAfterCommand => typeof(StoryCommand);
 
     public async Task ExecuteAsync(ITelegramBotClient client, Message message, CancellationToken ct)
     {
-        // TODO: #1 Save the reply
-
         // TODO: #2 Send follow-up to user
 
         await client.SendMessage(
@@ -35,6 +35,6 @@ public class StoryCommandFollowUp(
             text: groupMessage);
 
         // TODO: Pass as argument or 
-        //userStateManager.RemoveUserState(message.From.Id);
+        _userStateManager.RemoveUserState(message.From.Id);
     }
 }

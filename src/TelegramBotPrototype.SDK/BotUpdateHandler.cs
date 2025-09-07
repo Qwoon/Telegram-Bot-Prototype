@@ -69,6 +69,6 @@ public sealed class BotUpdateHandler : IBotUpdateHandler
 
     private void RegisterCommandFollowUps()
     {
-        _messageCommandRouter.RegisterCommandFollowUp(new StoryCommandFollowUp(_options));
+        _messageCommandRouter.RegisterCommandFollowUp(new StoryCommandFollowUp(_userStateManager, _options));
     }
 }

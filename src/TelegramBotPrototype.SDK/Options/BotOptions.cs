@@ -5,4 +5,5 @@ namespace TelegramBotPrototype.SDK.Options;
 public class BotOptions : BaseOptions<BotOptions>
 {
     public long AdminGroupChatId { get; set; }
+    public long AdminId { get; set; }
 }
