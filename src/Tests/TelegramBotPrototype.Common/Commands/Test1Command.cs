@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TelegramBotPrototype.SDK.Commands;
 
 namespace TelegramBotPrototype.Common.Commands;

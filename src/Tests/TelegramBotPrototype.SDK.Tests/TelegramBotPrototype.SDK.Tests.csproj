@@ -1,12 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
+  <!-- External Dependencies -->
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
@@ -15,9 +9,10 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
   </ItemGroup>
 
+  <!-- Internal Dependencies -->
   <ItemGroup>
-    <ProjectReference Include="..\..\..\TelegramBotPrototype.Common\TelegramBotPrototype.Common.csproj" />
     <ProjectReference Include="..\..\TelegramBotPrototype.SDK\TelegramBotPrototype.SDK.csproj" />
+    <ProjectReference Include="..\TelegramBotPrototype.Common\TelegramBotPrototype.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

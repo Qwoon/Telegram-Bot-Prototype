@@ -36,6 +36,7 @@ public sealed class BotUpdateHandler : IBotUpdateHandler
         _options = options.Value;
 
         RegisterCommands();
+        RegisterCommandFollowUps();
     }
 
     public async Task HandleAsync(Update update, CancellationToken ct)
@@ -53,14 +54,7 @@ public sealed class BotUpdateHandler : IBotUpdateHandler
     {
         _logger.LogInformation("Received message from chat #{chatId}. User {user}", message.Chat.Id, message.From.Username);
 
-        if (_userStateManager.GetUserSate(message.From.Id).UserState == Enums.UserState.WaitingForReply)
-        {
-            // TODO: Empty in here..
-        }
-        else
-        {
-            await _messageCommandRouter.ExecuteAsync(_client, message, ct);
-        }
+        await _messageCommandRouter.ExecuteAsync(_client, message, ct);
     }
 
     private void RegisterCommands()
@@ -71,5 +65,10 @@ public sealed class BotUpdateHandler : IBotUpdateHandler
             _provider.GetRequiredService<IMapper>()));
         _messageCommandRouter.RegisterCommand(new StartCommand(_provider.GetRequiredService<IBotUserService>()));
         _messageCommandRouter.RegisterCommand(new StoryCommand(_userStateManager));
+    }
+
+    private void RegisterCommandFollowUps()
+    {
+        _messageCommandRouter.RegisterCommandFollowUp(new StoryCommandFollowUp(_options));
     }
 }

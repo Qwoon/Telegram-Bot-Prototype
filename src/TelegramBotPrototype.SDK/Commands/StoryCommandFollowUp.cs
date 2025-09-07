@@ -1,14 +1,14 @@
-using Microsoft.Extensions.Options;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using TelegramBotPrototype.SDK.Interfaces;
+using TelegramBotPrototype.SDK.Commands.Interfaces;
 using TelegramBotPrototype.SDK.Options;
 
 namespace TelegramBotPrototype.SDK.Commands;
 
-public class StoryFollowUpCommand(IOptions<BotOptions> options) : IFollowUpCommand
+public class StoryCommandFollowUp(
+    BotOptions options) : ICommandFollowUp
 {
-    private readonly BotOptions _options = options.Value;
+    private readonly BotOptions _options = options;
 
     public Type FollowAfterCommand => typeof(StoryCommand);
 

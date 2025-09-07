@@ -13,8 +13,9 @@ public class UserCommandState
 public class UserStateManager
 {
     private readonly ConcurrentDictionary<long, UserCommandState> _userState = new();
-    public void SetUserState(long userId, UserCommandState userCommandState) => _userState.AddOrUpdate(userId, userCommandState, (key, oldValue) => userCommandState);
-    public UserCommandState GetUserSate(long userId) => _userState.GetValueOrDefault(userId);
-    public void RemoveUserState(long userId) => _userState.TryRemove(userId, out _);
+
+    public virtual void SetUserState(long userId, UserCommandState userCommandState) => _userState.AddOrUpdate(userId, userCommandState, (key, oldValue) => userCommandState);
+    public virtual UserCommandState GetUserSate(long userId) => _userState.GetValueOrDefault(userId);
+    public virtual void RemoveUserState(long userId) => _userState.TryRemove(userId, out _);
 
 }
