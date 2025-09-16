@@ -17,7 +17,7 @@ public class MessageCommandRouterTests
     {
         var options = Microsoft.Extensions.Options.Options.Create(new BotOptions()
         {
-            AdminGroupChatId = _adminId,
+            AdminGroupChatId = _adminGroupChatId,
             AdminId = _adminId,
         });
 
